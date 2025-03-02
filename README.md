@@ -1,0 +1,1 @@
+# detaomega.github.io
