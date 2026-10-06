@@ -1,0 +1,27 @@
+{
+  "name": "ping-yu-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "typecheck": "next typegen && tsc --noEmit",
+    "preview": "python3 -m http.server 8000 --bind 127.0.0.1 --directory out",
+    "format": "prettier --write src next.config.ts package.json tsconfig.json .github/workflows/deploy.yml README.md WEBSITE.md"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "next": "16.3.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "prettier": "3.9.9",
+    "typescript": "5.9.3"
+  }
+}
