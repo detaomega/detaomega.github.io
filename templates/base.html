@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="https://detaomega.github.io{{ route }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="https://detaomega.github.io{{ route }}">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/assets/css/portfolio.css?v=20261006-light">
+  <script src="/assets/js/portfolio.js?v=20261006-light" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Ping-Yu Yang","url":"https://detaomega.github.io/","email":"mailto:detaomega19@gmail.com","sameAs":["https://github.com/detaomega"],"knowsAbout":["Software Engineering","Semantic Communication","Deep Learning","Wireless Communication"],"alumniOf":{"@type":"CollegeOrUniversity","name":"National Yang Ming Chiao Tung University"}}</script>
+</head>
+<body data-page="{{ page }}" data-title-en="{{ title }}" data-title-zh="{{ title_zh }}">
+  <a class="skip-link" href="#main" data-zh="跳到主要內容">Skip to content</a>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="icon-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .8a11.3 11.3 0 0 0-3.6 22c.6.1.8-.2.8-.5v-2.1c-3.4.7-4.1-1.4-4.1-1.4-.5-1.3-1.2-1.6-1.2-1.6-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6a4.7 4.7 0 0 1 1.2-3.2c-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.6 11.6 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.6 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3c0 .3.2.6.8.5A11.3 11.3 0 0 0 12 .8Z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+    <symbol id="icon-link" viewBox="0 0 24 24"><path d="m10 13 4-4M8 15l-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2 3 1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0" transform="translate(2 1)"/></symbol>
+    <symbol id="icon-work" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4h8v3M3 12c5 3 13 3 18 0M12 12v4"/></symbol>
+    <symbol id="icon-cv" viewBox="0 0 24 24"><rect x="3" y="2" width="18" height="20" rx="2"/><path d="M11 9c-4-2-6 4-2 6l2-.3M13 9l2 6 2-6"/></symbol>
+  </defs></svg>
+  <div class="site-shell">
+    <header class="site-header"><div class="header-content content-width"><nav class="navigation" aria-label="Main navigation">{{ navigation }}</nav><button class="language-button" id="language-toggle" type="button" aria-label="Switch to Traditional Chinese">繁中</button></div></header>
+    <main class="content-width" id="main"><a class="avatar" href="/" aria-label="Ping-Yu Yang, home"><img src="/assets/profile.jpg" alt="Ping-Yu Yang" width="460" height="460"></a>{{ content }}</main>
+    <footer class="site-footer"><div class="content-width footer-content"><nav class="footer-navigation" aria-label="Footer navigation">{{ footer_navigation }}</nav><p>© <span id="copyright-year">2026</span> Ping-Yu Yang</p></div></footer>
+  </div>
+</body>
+</html>
