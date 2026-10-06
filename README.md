@@ -17,16 +17,16 @@ npm run dev
 
 ## 專案結構
 
-| 位置                           | 用途                                               |
-| ------------------------------ | -------------------------------------------------- |
-| `src/content/profile.ts`       | 個人資料、中英文文案、學歷、經歷、專案與獎項       |
-| `src/app/`                     | Home、About、Projects、Experience 頁面與 metadata  |
-| `src/components/`              | 共用導覽、語言切換、專案卡片、工作摘要、照片與圖示 |
-| `src/app/globals.css`          | 共用樣式與響應式版面                               |
-| `public/assets/`               | 照片、原始 CV 與 favicon                           |
-| `.github/workflows/deploy.yml` | 型別檢查、建置與 GitHub Pages 部署                 |
+| 位置                           | 用途                                              |
+| ------------------------------ | ------------------------------------------------- |
+| `src/content/profile.ts`       | 個人資料、中英文文案、學歷、經歷、專案與獎項      |
+| `src/app/`                     | Home、About、Projects、Experience 頁面與 metadata |
+| `src/components/`              | 共用導覽、語言切換、學歷／經歷時間軸、專案與圖示  |
+| `src/app/globals.css`          | 共用樣式與響應式版面                              |
+| `public/assets/`               | 照片、原始 CV 與 favicon                          |
+| `.github/workflows/deploy.yml` | 型別檢查、建置與 GitHub Pages 部署                |
 
-內容集中於 `src/content/profile.ts`。例如更新實習經歷，只需修改 `experiences` 陣列，首頁工作摘要與 Experience 頁面便會同步更新。新增專案時可複製 `projects` 的既有項目；每段文案的 `en`、`zh` 分別是英文與繁體中文。
+內容集中於 `src/content/profile.ts`。例如更新實習經歷，只需修改 `experiences` 陣列，首頁時間軸與 Experience 頁面便會同步更新。`organizations` 管理學校與公司的 logo 路徑。新增專案時可複製 `projects` 的既有項目；每段文案的 `en`、`zh` 分別是英文與繁體中文。
 
 ## 驗證與正式版預覽
 

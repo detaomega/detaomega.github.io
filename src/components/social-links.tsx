@@ -4,7 +4,13 @@ import { profile, labels } from "@/content/profile";
 import { Icon } from "./icons";
 import { useLanguage } from "./language-provider";
 
-export function SocialLinks({ sidebar = false }: { sidebar?: boolean }) {
+export function SocialLinks({
+  sidebar = false,
+  buttons = false,
+}: {
+  sidebar?: boolean;
+  buttons?: boolean;
+}) {
   const { language, translate } = useLanguage();
   const cvLabel = translate(labels.downloadCV);
   const github = (
@@ -17,6 +23,7 @@ export function SocialLinks({ sidebar = false }: { sidebar?: boolean }) {
     >
       <Icon name="github" />
       {sidebar && <span>GitHub / detaomega</span>}
+      {buttons && <span>GitHub</span>}
     </a>
   );
   const email = (
@@ -29,6 +36,7 @@ export function SocialLinks({ sidebar = false }: { sidebar?: boolean }) {
     >
       <Icon name="mail" />
       {sidebar && <span>{profile.email}</span>}
+      {buttons && <span>{profile.email}</span>}
     </a>
   );
   const cv = (
@@ -40,14 +48,21 @@ export function SocialLinks({ sidebar = false }: { sidebar?: boolean }) {
     >
       <Icon name="cv" />
       {sidebar && <span>{cvLabel}</span>}
+      {buttons && <span>{cvLabel}</span>}
     </a>
   );
   return (
     <div
-      className={sidebar ? "sidebar-links" : "social-links"}
+      className={
+        sidebar
+          ? "sidebar-links"
+          : buttons
+            ? "social-links contact-buttons"
+            : "social-links"
+      }
       aria-label={language === "en" ? "Find me online" : "聯絡方式"}
     >
-      {sidebar ? (
+      {sidebar || buttons ? (
         <>
           {github}
           {email}

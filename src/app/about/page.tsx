@@ -3,10 +3,11 @@ import Link from "next/link";
 import { PageIntro } from "@/components/page-intro";
 import { Text } from "@/components/language-provider";
 import { SocialLinks } from "@/components/social-links";
+import { EducationTimeline } from "@/components/resume-timeline";
+import { Icon } from "@/components/icons";
 import {
   aboutSections,
   awards,
-  education,
   labels,
   profile,
   research,
@@ -62,24 +63,21 @@ export default function About() {
         id="education"
         aria-labelledby="education-title"
       >
-        <Text as="h2" id="education-title" text={labels.education} />
-        {education.map((school) => (
-          <article className="education-row" key={school.id}>
-            <div>
-              <Text as="h3" text={school.name} />
-              <Text as="p" text={school.degree} />
-              <Text as="p" className="secondary-detail" text={school.note} />
-            </div>
-            <Text className="date" text={school.dates} />
-          </article>
-        ))}
+        <h2 className="section-heading" id="education-title">
+          <Icon name="education" />
+          <Text text={labels.education} />
+        </h2>
+        <EducationTimeline />
       </section>
       <section
         className="detail-section"
         id="awards"
         aria-labelledby="awards-title"
       >
-        <Text as="h2" id="awards-title" text={labels.awards} />
+        <h2 className="section-heading" id="awards-title">
+          <Icon name="award" />
+          <Text text={labels.awards} />
+        </h2>
         {awards.map((award) => (
           <div className="award-row" key={award.title.en}>
             <span className="date">{award.year}</span>
@@ -95,7 +93,10 @@ export default function About() {
         id="skills"
         aria-labelledby="skills-title"
       >
-        <Text as="h2" id="skills-title" text={labels.skills} />
+        <h2 className="section-heading" id="skills-title">
+          <Icon name="skills" />
+          <Text text={labels.skills} />
+        </h2>
         {skills.map((skill) => (
           <div className="skill-row" key={skill.title.en}>
             <Text as="h3" text={skill.title} />

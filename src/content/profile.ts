@@ -9,17 +9,30 @@ export const profile = {
   github: "https://github.com/detaomega",
   photo: "/assets/profile.jpg",
   cv: "/assets/Ping-Yu-Yang-CV.pdf",
+  subtitle: text(
+    "Computer Science · Software Engineering & Communication Research",
+    "資訊工程 · 軟體工程與通訊研究",
+  ),
 };
+
+export const organizations = {
+  ntu: { name: "National Taiwan University", logo: "/assets/logos/ntu.jpg" },
+  nycu: {
+    name: "National Yang Ming Chiao Tung University",
+    logo: "/assets/logos/nycu.png",
+  },
+  tsmc: { name: "TSMC", logo: "/assets/logos/tsmc.svg" },
+  microsoft: { name: "Microsoft", logo: "/assets/logos/microsoft.svg" },
+  logitech: { name: "Logitech", logo: "/assets/logos/logitech.svg" },
+};
+export type OrganizationId = keyof typeof organizations;
 
 export const pages = {
   home: {
     href: "/",
     label: text("Home", "首頁"),
     title: text("Ping-Yu Yang", "Ping-Yu Yang · 個人網站"),
-    heading: text(
-      "A software engineer\nexploring smarter\ncommunication.",
-      "寫程式，也探索更智慧的通訊。",
-    ),
+    heading: text("Ping-Yu Yang", "Ping-Yu Yang"),
     intro: text(
       "I'm Ping-Yu Yang, a computer science graduate from NYCU with research experience in semantic communication and deep learning at NTU. I've built software at TSMC, Microsoft, and Logitech, and enjoy turning complex problems into useful systems.",
       "我是 Ping-Yu Yang，畢業於陽明交通大學資工系，在臺大資工研究語意通訊與深度學習。曾在 TSMC、Microsoft 與 Logitech 實習，喜歡從演算法出發，把複雜的問題做成實用的系統。",
@@ -79,11 +92,10 @@ export const navigation = Object.entries(pages).map(([id, page]) => ({
 }));
 
 export const research = {
-  icon: "📡",
   title: text("Semantic Communication", "語意通訊研究"),
   summary: text(
-    "Research in semantic communication, deep learning, and wireless systems, exploring learning-based approaches to transmitting information.",
-    "研究語意通訊、深度學習與無線通訊，探索如何以學習式方法傳遞資訊。",
+    "My research interests include semantic communication, deep learning, and wireless systems, with a focus on learning-based approaches to transmitting information.",
+    "我的研究方向包括語意通訊、深度學習與無線通訊，探索如何以學習式方法傳遞資訊。",
   ),
   interests: [
     text("Semantic communication", "語意通訊"),
@@ -121,33 +133,28 @@ export const aboutSections = [
 
 export const education = [
   {
-    id: "ntu",
-    name: text("National Taiwan University", "國立臺灣大學"),
-    degree: text(
-      "M.S. in Computer Science and Information Engineering",
-      "資訊工程學系碩士",
+    id: "ntu" as const,
+    degreeTitle: text("Master of Science", "理學碩士"),
+    field: text("Computer Science and Information Engineering", "資訊工程學系"),
+    institution: text(
+      "National Taiwan University · Taipei, Taiwan",
+      "國立臺灣大學 · 台灣臺北",
     ),
     dates: text("Aug 2024 — Jun 2026 (expected)", "2024.08 — 2026.06（預計）"),
-    years: text("2024 — 2026 (expected)", "2024 — 2026（預計）"),
-    summary: text(
-      "M.S. in Computer Science and Information Engineering. Research in semantic communication, deep learning, and wireless communication.",
-      "資訊工程學系碩士。研究聚焦於語意通訊、深度學習與無線通訊。",
-    ),
     note: text(
       "Research: semantic communication, deep learning, wireless communication",
       "研究：語意通訊、深度學習、無線通訊",
     ),
   },
   {
-    id: "nycu",
-    name: text("National Yang Ming Chiao Tung University", "國立陽明交通大學"),
-    degree: text("B.S. in Computer Science", "資訊工程學系學士"),
-    dates: text("Sep 2020 — Jun 2024", "2020.09 — 2024.06"),
-    years: text("2020 — 2024", "2020 — 2024"),
-    summary: text(
-      "B.S. in Computer Science. Overall GPA of 4.04 / 4.3 and CS coursework GPA of 4.17 / 4.3.",
-      "資訊工程學系學士。總平均 GPA 4.04 / 4.3，資工課程 GPA 4.17 / 4.3。",
+    id: "nycu" as const,
+    degreeTitle: text("Bachelor of Science", "理學學士"),
+    field: text("Computer Science", "資訊工程學系"),
+    institution: text(
+      "National Yang Ming Chiao Tung University · Hsinchu, Taiwan",
+      "國立陽明交通大學 · 台灣新竹",
     ),
+    dates: text("Sep 2020 — Jun 2024", "2020.09 — 2024.06"),
     note: text(
       "Overall GPA: 4.04 / 4.3 · CS coursework GPA: 4.17 / 4.3",
       "總平均 GPA：4.04 / 4.3 · 資工課程 GPA：4.17 / 4.3",
@@ -158,11 +165,9 @@ export const education = [
 export const experiences = [
   {
     id: "tsmc" as const,
-    company: "TSMC",
+    organization: text("TSMC · Hsinchu, Taiwan", "TSMC · 台灣新竹"),
     role: text("IT Intern", "IT 實習生"),
-    context: text("IT Intern · Hsinchu, Taiwan", "IT 實習生 · 台灣，新竹"),
     dates: text("Jul — Aug 2024", "2024.07 — 2024.08"),
-    shortDates: text("Jul — Aug 2024", "2024.07 — 08"),
     description: text(
       "Built the frontend for an internal leave-approval platform using React and optimized a core Java backend API, improving production performance, scalability, and reliability.",
       "使用 React 建置內部請假簽核平台前端，並優化 Java 後端核心 API，提升正式環境中的效能、可擴展性與可靠性。",
@@ -185,14 +190,12 @@ export const experiences = [
   },
   {
     id: "microsoft" as const,
-    company: "Microsoft",
-    role: text("R&D Intern", "研發實習生"),
-    context: text(
-      "R&D Intern · Bing Maps Directions Team · Taiwan",
-      "研發實習生 · Bing Maps 路線團隊 · 台灣",
+    organization: text(
+      "Microsoft · Bing Maps Directions Team · Taiwan",
+      "Microsoft · Bing Maps 路線團隊 · 台灣",
     ),
+    role: text("R&D Intern", "研發實習生"),
     dates: text("Jul 2023 — Jun 2024", "2023.07 — 2024.06"),
-    shortDates: text("2023 — 2024", "2023 — 2024"),
     description: text(
       "Developed and deployed a full-stack internal routing debugger, helping the Bing Maps team reduce time spent debugging map quality issues.",
       "開發並部署內部全端路線除錯工具，協助 Bing Maps 團隊縮短地圖品質問題的除錯時間。",
@@ -211,14 +214,9 @@ export const experiences = [
   },
   {
     id: "logitech" as const,
-    company: "Logitech",
+    organization: text("Logitech · Hsinchu, Taiwan", "Logitech · 台灣新竹"),
     role: text("Software Engineer Intern", "軟體工程實習生"),
-    context: text(
-      "Software Engineer Intern · Hsinchu, Taiwan",
-      "軟體工程實習生 · 台灣，新竹",
-    ),
     dates: text("Mar — Jun 2023", "2023.03 — 2023.06"),
-    shortDates: text("Mar — Jun 2023", "2023.03 — 06"),
     description: text(
       "Built a Python/Flask backend to automate and scale data parsing pipelines from Excel inputs, replacing a highly manual data management process.",
       "使用 Python 與 Flask 建置後端，自動化並擴展 Excel 資料解析流程，取代高度依賴人工的資料管理工作。",
@@ -237,7 +235,7 @@ export const experiences = [
 export const projects = [
   {
     id: "jazz",
-    icon: "🥁",
+    icon: "music" as const,
     title: text("Generating Jazz Drum Comping with AI", "AI 爵士鼓伴奏生成"),
     shortTitle: text("Jazz Drum Comping with AI", "AI 爵士鼓伴奏"),
     summary: text(
@@ -258,7 +256,7 @@ export const projects = [
   },
   {
     id: "meals",
-    icon: "🍱",
+    icon: "code" as const,
     title: text("Meal Provider Platform", "員工餐點訂購平台"),
     shortTitle: text("Meal Provider Platform", "員工餐點訂購平台"),
     summary: text(
@@ -339,6 +337,12 @@ export const skills = [
 ];
 
 export const labels = {
+  introduction: text("Introduction", "自我介紹"),
+  contents: text("On this page", "本頁內容"),
+  biography: text("Bio", "關於我"),
+  selectedProjects: text("Selected projects", "精選專案"),
+  allProjects: text("All projects", "完整專案"),
+  viewDetails: text("View details", "查看細節"),
   research: text("Research interests", "研究方向"),
   viewProject: text("View project", "查看專案"),
   githubProject: text("View project on GitHub", "在 GitHub 查看專案"),
@@ -360,3 +364,12 @@ export const labels = {
     "歡迎聊聊軟體工程、通訊研究，或交流想法。",
   ),
 };
+
+export const homeSections = [
+  { id: "introduction", label: labels.introduction },
+  { id: "education", label: labels.education },
+  { id: "experience", label: pages.experience.label },
+  { id: "projects", label: pages.projects.label },
+  { id: "awards", label: labels.awards },
+  { id: "skills", label: labels.skills },
+];

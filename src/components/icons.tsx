@@ -1,8 +1,21 @@
-export type IconName = "github" | "mail" | "link" | "work" | "cv";
+export type IconName =
+  | "github"
+  | "mail"
+  | "link"
+  | "work"
+  | "cv"
+  | "education"
+  | "award"
+  | "code"
+  | "music"
+  | "home"
+  | "person"
+  | "chevron"
+  | "skills";
 
 export function Icon({ name }: { name: IconName }) {
   return (
-    <svg className="icon" aria-hidden="true">
+    <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">
       <use href={`#icon-${name}`} />
     </svg>
   );
@@ -16,6 +29,34 @@ export function IconDefinitions() {
       aria-hidden="true"
     >
       <defs>
+        <symbol id="icon-education" viewBox="0 0 24 24">
+          <path d="m2 9 10-5 10 5-10 5-10-5ZM6 11v6c3 3 9 3 12 0v-6M22 9v7" />
+        </symbol>
+        <symbol id="icon-award" viewBox="0 0 24 24">
+          <path d="M8 3h8v5a4 4 0 0 1-8 0V3ZM8 5H4v2a4 4 0 0 0 4 4M16 5h4v2a4 4 0 0 1-4 4M12 12v6M8 21h8M9 18h6v3H9z" />
+        </symbol>
+        <symbol id="icon-code" viewBox="0 0 24 24">
+          <path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16" />
+        </symbol>
+        <symbol id="icon-music" viewBox="0 0 24 24">
+          <path d="M9 18V5l12-2v13M9 8l12-2" />
+          <ellipse cx="6" cy="18" rx="3" ry="3" />
+          <ellipse cx="18" cy="16" rx="3" ry="3" />
+        </symbol>
+        <symbol id="icon-home" viewBox="0 0 24 24">
+          <path d="m3 10 9-7 9 7v10H3V10ZM9 20v-7h6v7" />
+        </symbol>
+        <symbol id="icon-person" viewBox="0 0 24 24">
+          <circle cx="12" cy="7" r="4" />
+          <path d="M4 21v-2a8 8 0 0 1 16 0v2" />
+        </symbol>
+        <symbol id="icon-chevron" viewBox="0 0 24 24">
+          <path d="m6 9 6 6 6-6" />
+        </symbol>
+        <symbol id="icon-skills" viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="13" rx="2" />
+          <path d="M8 21h8M12 17v4m-5-13 3 3-3 3m6 0h4" />
+        </symbol>
         <symbol id="icon-github" viewBox="0 0 24 24">
           <path
             fill="currentColor"
@@ -43,28 +84,5 @@ export function IconDefinitions() {
         </symbol>
       </defs>
     </svg>
-  );
-}
-
-export function CompanyBadge({
-  company,
-}: {
-  company: "tsmc" | "microsoft" | "logitech";
-}) {
-  return (
-    <span className={`company-badge ${company}-badge`} aria-hidden="true">
-      {company === "microsoft" ? (
-        <>
-          <i />
-          <i />
-          <i />
-          <i />
-        </>
-      ) : company === "tsmc" ? (
-        "TSMC"
-      ) : (
-        "logi"
-      )}
-    </span>
   );
 }

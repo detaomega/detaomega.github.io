@@ -13,8 +13,8 @@ export function ProjectCard({
 }) {
   const content = (
     <>
-      <span className="project-emoji" aria-hidden="true">
-        {project.icon}
+      <span className="project-icon">
+        <Icon name={project.icon} />
       </span>
       <Text as="h2" text={detailed ? project.title : project.shortTitle} />
       <Text as="p" text={detailed ? project.description : project.summary} />

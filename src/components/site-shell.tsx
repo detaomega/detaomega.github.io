@@ -1,12 +1,19 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
 import { navigation, profile } from "@/content/profile";
-import { IconDefinitions } from "./icons";
+import { Icon, IconDefinitions, type IconName } from "./icons";
 import { useLanguage } from "./language-provider";
+import { TableOfContents } from "./table-of-contents";
+
+const navigationIcons: Record<string, IconName> = {
+  home: "home",
+  about: "person",
+  projects: "code",
+  experience: "work",
+};
 
 export function SiteShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -25,6 +32,13 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <div className="site-shell" data-page={page?.id}>
         <header className="site-header">
           <div className="header-content content-width">
+            <Link
+              href="/"
+              className="site-brand"
+              aria-label="Ping-Yu Yang, home"
+            >
+              <span>Ping-Yu</span> Yang
+            </Link>
             <nav
               className="navigation"
               aria-label={language === "en" ? "Main navigation" : "主要導覽"}
@@ -36,6 +50,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
                   className={item.href === route ? "active" : undefined}
                   aria-current={item.href === route ? "page" : undefined}
                 >
+                  <Icon name={navigationIcons[item.id]} />
                   {translate(item.label)}
                 </Link>
               ))}
@@ -55,23 +70,12 @@ export function SiteShell({ children }: { children: ReactNode }) {
             </button>
           </div>
         </header>
-        <main className="content-width" id="main">
-          <Link
-            className="avatar"
-            href="/"
-            aria-label={
-              language === "en" ? "Ping-Yu Yang, home" : "Ping-Yu Yang，首頁"
-            }
-          >
-            <Image
-              src={profile.photo}
-              alt="Ping-Yu Yang"
-              width={460}
-              height={460}
-            />
-          </Link>
-          {children}
-        </main>
+        <div
+          className={`page-layout content-width ${route === "/" ? "overview-layout" : "inner-layout"}`}
+        >
+          {route === "/" && <TableOfContents />}
+          <main id="main">{children}</main>
+        </div>
         <footer className="site-footer">
           <div className="content-width footer-content">
             <nav

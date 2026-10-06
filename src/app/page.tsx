@@ -3,15 +3,19 @@ import Link from "next/link";
 import { Text } from "@/components/language-provider";
 import { SocialLinks } from "@/components/social-links";
 import { ProjectCard } from "@/components/project-card";
-import { WorkWidget } from "@/components/work-widget";
+import {
+  EducationTimeline,
+  ExperienceTimeline,
+} from "@/components/resume-timeline";
 import { Icon } from "@/components/icons";
 import {
-  education,
+  awards,
   labels,
   pages,
   profile,
   projects,
   research,
+  skills,
 } from "@/content/profile";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -20,62 +24,127 @@ export const metadata = pageMetadata("home");
 export default function Home() {
   return (
     <>
-      <section className="home-hero" aria-labelledby="hero-title">
-        <div className="hero-copy">
-          <Text as="h1" id="hero-title" text={pages.home.heading} />
-          <Text as="p" className="intro-text" text={pages.home.intro} />
-          <SocialLinks />
+      <section
+        className="profile-introduction"
+        id="introduction"
+        aria-labelledby="profile-title"
+      >
+        <div className="profile-heading">
+          <div className="profile-identity">
+            <h1 id="profile-title">{profile.name}</h1>
+            <Text as="p" className="profile-subtitle" text={profile.subtitle} />
+            <SocialLinks buttons />
+          </div>
+          <div className="profile-portrait">
+            <Image
+              src={profile.photo}
+              alt="Ping-Yu Yang by the sea"
+              width={460}
+              height={460}
+              preload
+            />
+          </div>
         </div>
-        <figure className="hero-photo">
-          <Image
-            src={profile.photo}
-            alt="Ping-Yu Yang standing by the sea"
-            width={460}
-            height={460}
-            preload
-          />
-        </figure>
+        <div className="profile-biography">
+          <p>
+            <strong>
+              <Text text={labels.research} />:{" "}
+            </strong>
+            <Text text={research.summary} />
+          </p>
+          <p>
+            <strong>
+              <Text text={labels.biography} />:{" "}
+            </strong>
+            <Text text={pages.home.intro} />
+          </p>
+        </div>
       </section>
       <section
-        className="home-projects"
-        aria-label="Selected projects and research"
+        className="resume-section"
+        id="education"
+        aria-labelledby="education-title"
       >
-        <div className="project-grid">
-          <Link className="project-preview" href="/about/#research">
-            <span className="project-emoji" aria-hidden="true">
-              {research.icon}
-            </span>
-            <Text as="h2" text={research.title} />
-            <Text as="p" text={research.summary} />
-            <span className="subtle-link">
-              <Icon name="link" />
-              <Text text={labels.research} />
-            </span>
+        <h2 className="section-heading" id="education-title">
+          <Icon name="education" />
+          <Text text={labels.education} />
+        </h2>
+        <EducationTimeline />
+      </section>
+      <section
+        className="resume-section"
+        id="experience"
+        aria-labelledby="experience-title"
+      >
+        <div className="section-header">
+          <h2 className="section-heading" id="experience-title">
+            <Icon name="work" />
+            <Text text={pages.experience.label} />
+          </h2>
+          <Link className="section-link" href="/experience/">
+            <Text text={labels.viewDetails} />
+            <span aria-hidden="true">→</span>
           </Link>
+        </div>
+        <ExperienceTimeline />
+      </section>
+      <section
+        className="resume-section"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div className="section-header">
+          <h2 className="section-heading" id="projects-title">
+            <Icon name="code" />
+            <Text text={labels.selectedProjects} />
+          </h2>
+          <Link className="section-link" href="/projects/">
+            <Text text={labels.allProjects} />
+            <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+        <div className="project-grid">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </section>
-      <section className="home-background" aria-label="Education and work">
-        <div className="background-notes">
-          {education.map((school, index) => (
-            <article className="background-note" key={school.id}>
-              <Text as="p" className="note-date" text={school.years} />
-              <Text as="h2" text={school.name} />
-              <Text as="p" text={school.summary} />
-              <Link
-                className="teal-link"
-                href={index === 0 ? "/about/#education" : "/about/#awards"}
-              >
-                <Text
-                  text={index === 0 ? labels.academicBackground : labels.awards}
-                />
-              </Link>
+      <section
+        className="resume-section"
+        id="awards"
+        aria-labelledby="awards-title"
+      >
+        <h2 className="section-heading" id="awards-title">
+          <Icon name="award" />
+          <Text text={labels.awards} />
+        </h2>
+        <div className="awards-list">
+          {awards.map((award) => (
+            <article className="award-row" key={award.title.en}>
+              <span className="date">{award.year}</span>
+              <div>
+                <Text as="h3" text={award.title} />
+                <Text as="p" text={award.result} />
+              </div>
             </article>
           ))}
         </div>
-        <WorkWidget />
+      </section>
+      <section
+        className="resume-section"
+        id="skills"
+        aria-labelledby="skills-title"
+      >
+        <h2 className="section-heading" id="skills-title">
+          <Icon name="skills" />
+          <Text text={labels.skills} />
+        </h2>
+        {skills.map((skill) => (
+          <div className="skill-row" key={skill.title.en}>
+            <Text as="h3" text={skill.title} />
+            <Text as="p" text={skill.description} />
+          </div>
+        ))}
       </section>
     </>
   );
