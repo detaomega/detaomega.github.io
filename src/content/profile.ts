@@ -4,6 +4,8 @@ const text = (en: string, zh: string): LocalizedString => ({ en, zh });
 // Edit your biography, education, experience, and projects here.
 export const profile = {
   name: "Ping-Yu Yang",
+  initials: "PY",
+  focus: text("Engineering & research", "軟體工程與研究"),
   siteUrl: "https://detaomega.github.io",
   email: "detaomega19@gmail.com",
   github: "https://github.com/detaomega",
@@ -26,6 +28,17 @@ export const organizations = {
   logitech: { name: "Logitech", logo: "/assets/logos/logitech.svg" },
 };
 export type OrganizationId = keyof typeof organizations;
+
+export const designReferences = [
+  {
+    name: "En-Ming Huang",
+    url: "https://www.enmingw32.dev/",
+  },
+  {
+    name: "Stanley Shen",
+    url: "https://stanleyshen2003.github.io/me/",
+  },
+];
 
 export const pages = {
   home: {
@@ -337,6 +350,7 @@ export const skills = [
 ];
 
 export const labels = {
+  designReferences: text("Design references:", "設計參考："),
   introduction: text("Introduction", "自我介紹"),
   contents: text("On this page", "本頁內容"),
   biography: text("Bio", "關於我"),

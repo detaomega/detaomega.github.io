@@ -26,7 +26,8 @@ npm run dev
 | `public/assets/`               | 照片、原始 CV 與 favicon                          |
 | `.github/workflows/deploy.yml` | 型別檢查、建置與 GitHub Pages 部署                |
 
-內容集中於 `src/content/profile.ts`。例如更新實習經歷，只需修改 `experiences` 陣列，首頁時間軸與 Experience 頁面便會同步更新。`organizations` 管理學校與公司的 logo 路徑。新增專案時可複製 `projects` 的既有項目；每段文案的 `en`、`zh` 分別是英文與繁體中文。
+內容集中於 `src/content/profile.ts`。例如更新實習經歷，只需修改 `experiences` 陣列，首頁經歷清單與 Experience 頁面便會同步更新。`organizations` 管理學校與公司的 logo 路徑。新增專案時可複製 `projects` 的既有項目；每段文案的 `en`、`zh` 分別是英文與繁體中文。
+公開設計參考連結由 `designReferences` 管理，顯示於所有頁面的頁尾；參考範圍記錄在 [docs/design-assets.md](docs/design-assets.md)。
 
 ## 驗證與正式版預覽
 

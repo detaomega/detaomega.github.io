@@ -8,27 +8,42 @@ export function TableOfContents() {
   const { translate } = useLanguage();
   const [active, setActive] = useState("introduction");
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.filter((entry) => entry.isIntersecting);
-        if (visible.length) setActive(visible[0].target.id);
-      },
-      { rootMargin: "-80px 0px -60% 0px", threshold: 0 },
-    );
-    homeSections.forEach(({ id }) => {
-      const section = document.getElementById(id);
-      if (section) observer.observe(section);
-    });
-    return () => observer.disconnect();
+    let observer: IntersectionObserver;
+    function observeSections() {
+      observer?.disconnect();
+      const headerHeight =
+        document.querySelector(".site-header")?.getBoundingClientRect()
+          .height ?? 72;
+      observer = new IntersectionObserver(
+        (entries) => {
+          const visible = entries.filter((entry) => entry.isIntersecting);
+          if (visible.length) setActive(visible[0].target.id);
+        },
+        {
+          rootMargin: `-${Math.ceil(headerHeight + 12)}px 0px -55% 0px`,
+          threshold: 0,
+        },
+      );
+      homeSections.forEach(({ id }) => {
+        const section = document.getElementById(id);
+        if (section) observer.observe(section);
+      });
+    }
+    observeSections();
+    window.addEventListener("resize", observeSections);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", observeSections);
+    };
   }, []);
   return (
-    <aside className="contents-sidebar">
+    <aside className="section-navigation">
       <nav
-        className="contents-navigation"
+        className="contents-navigation content-width"
         aria-label={translate(labels.contents)}
       >
         <h2>{translate(labels.contents)}</h2>
-        {homeSections.map((section) => (
+        {homeSections.map((section, index) => (
           <a
             key={section.id}
             href={`#${section.id}`}
@@ -36,7 +51,10 @@ export function TableOfContents() {
             aria-current={active === section.id ? "location" : undefined}
             onClick={() => setActive(section.id)}
           >
-            {translate(section.label)}
+            <span className="section-index" aria-hidden="true">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <span>{translate(section.label)}</span>
           </a>
         ))}
       </nav>

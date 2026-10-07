@@ -31,6 +31,7 @@ export default function Home() {
       >
         <div className="profile-heading">
           <div className="profile-identity">
+            <Text as="p" className="profile-focus" text={profile.focus} />
             <h1 id="profile-title">{profile.name}</h1>
             <Text as="p" className="profile-subtitle" text={profile.subtitle} />
             <SocialLinks buttons />
@@ -48,13 +49,13 @@ export default function Home() {
         <div className="profile-biography">
           <p>
             <strong>
-              <Text text={labels.research} />:{" "}
+              <Text text={labels.research} />
             </strong>
             <Text text={research.summary} />
           </p>
           <p>
             <strong>
-              <Text text={labels.biography} />:{" "}
+              <Text text={labels.biography} />
             </strong>
             <Text text={pages.home.intro} />
           </p>

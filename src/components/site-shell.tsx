@@ -3,17 +3,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
-import { navigation, profile } from "@/content/profile";
-import { Icon, IconDefinitions, type IconName } from "./icons";
+import {
+  designReferences,
+  labels,
+  navigation,
+  profile,
+} from "@/content/profile";
+import { IconDefinitions } from "./icons";
 import { useLanguage } from "./language-provider";
 import { TableOfContents } from "./table-of-contents";
-
-const navigationIcons: Record<string, IconName> = {
-  home: "home",
-  about: "person",
-  projects: "code",
-  experience: "work",
-};
 
 export function SiteShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -37,7 +35,10 @@ export function SiteShell({ children }: { children: ReactNode }) {
               className="site-brand"
               aria-label="Ping-Yu Yang, home"
             >
-              <span>Ping-Yu</span> Yang
+              <span className="brand-mark" aria-hidden="true">
+                {profile.initials}
+              </span>
+              <span>{profile.name}</span>
             </Link>
             <nav
               className="navigation"
@@ -50,7 +51,6 @@ export function SiteShell({ children }: { children: ReactNode }) {
                   className={item.href === route ? "active" : undefined}
                   aria-current={item.href === route ? "page" : undefined}
                 >
-                  <Icon name={navigationIcons[item.id]} />
                   {translate(item.label)}
                 </Link>
               ))}
@@ -69,11 +69,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
               {language === "en" ? "繁中" : "EN"}
             </button>
           </div>
+          {route === "/" && <TableOfContents />}
         </header>
         <div
           className={`page-layout content-width ${route === "/" ? "overview-layout" : "inner-layout"}`}
         >
-          {route === "/" && <TableOfContents />}
           <main id="main">{children}</main>
         </div>
         <footer className="site-footer">
@@ -88,9 +88,26 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 </Link>
               ))}
             </nav>
-            <p>
-              © {year} {profile.name}
-            </p>
+            <div className="footer-details">
+              <p>
+                © {year} {profile.name}
+              </p>
+              <p className="design-credits">
+                {translate(labels.designReferences)}{" "}
+                {designReferences.map((reference, index) => (
+                  <span key={reference.url}>
+                    {index > 0 && " · "}
+                    <a
+                      href={reference.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {reference.name}
+                    </a>
+                  </span>
+                ))}
+              </p>
+            </div>
           </div>
         </footer>
       </div>
