@@ -35,7 +35,10 @@ export const pages = {
   home: {
     href: "/",
     label: text("Home", "首頁"),
-    title: text("Ping-Yu Yang", "Ping-Yu Yang · 個人網站"),
+    title: text(
+      "Ping-Yu Yang | Software Engineering & Semantic Communication",
+      "Ping-Yu Yang｜軟體工程與語意通訊研究",
+    ),
     heading: text("Ping-Yu Yang", "Ping-Yu Yang"),
     intro: text(
       "I'm Ping-Yu Yang, a computer science graduate from NYCU researching semantic communication and deep learning at NTU. I expect to graduate in late December 2026 and will be joining NVIDIA as a GPU System Engineer (RDSS Intern). Previously, I've built software at TSMC, Microsoft, and Logitech.",
@@ -49,15 +52,18 @@ export const pages = {
   about: {
     href: "/about/",
     label: text("About", "關於"),
-    title: text("About · Ping-Yu Yang", "關於我 · Ping-Yu Yang"),
+    title: text(
+      "About Ping-Yu Yang | Education & Research",
+      "關於 Ping-Yu Yang｜學歷與研究",
+    ),
     heading: text("I'm Ping-Yu Yang.", "我是 Ping-Yu Yang。"),
     intro: text(
-      "My work spans software engineering, algorithms, and machine learning. I enjoy understanding how things work and turning ideas into software people can use.",
-      "我的經驗橫跨軟體工程、演算法與機器學習。我喜歡理解問題背後的原理，也喜歡把想法寫成能實際使用的程式。",
+      "I'm a computer science graduate from National Yang Ming Chiao Tung University, now studying at NTU CSIE and researching semantic communication and deep learning. I expect to graduate in late December 2026 and will join NVIDIA as a GPU System Engineer (RDSS Intern).",
+      "我畢業於國立陽明交通大學資工系，目前就讀臺大資工所，研究語意通訊與深度學習，預計於 2026 年 12 月底畢業。接下來將加入 NVIDIA，擔任 GPU System Engineer（RDSS Intern）。",
     ),
     description: text(
-      "About Ping-Yu Yang: research interests, education at NTU and NYCU, competitive programming awards, and technical skills.",
-      "關於 Ping-Yu Yang：研究方向、臺大與陽明交大的學歷、程式競賽紀錄與技術能力。",
+      "Meet Ping-Yu Yang (detaomega): NTU CSIE student, NYCU computer science graduate, semantic communication researcher, and incoming NVIDIA GPU System Engineer (RDSS Intern).",
+      "關於 Ping-Yu Yang（detaomega）：臺大資工所、陽明交大資工學歷、語意通訊研究，以及即將到職的 NVIDIA GPU System Engineer（RDSS Intern）。",
     ),
   },
   projects: {

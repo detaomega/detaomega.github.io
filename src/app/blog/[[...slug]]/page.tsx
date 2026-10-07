@@ -3,9 +3,11 @@ import { notFound } from "next/navigation";
 import { ArticleHeader } from "@/components/article-header";
 import { BlogList } from "@/components/blog-list";
 import { PageIntro } from "@/components/page-intro";
+import { StructuredData } from "@/components/structured-data";
 import { profile } from "@/content/profile";
 import { pageMetadata, postMetadata, socialImage } from "@/lib/metadata";
 import { getPublishedPosts, getPostSummaries } from "@/lib/posts";
+import { personId } from "@/lib/structured-data";
 
 export const dynamicParams = false;
 type Props = { params: Promise<{ slug?: string[] }> };
@@ -51,6 +53,7 @@ export default async function BlogPage({ params }: Props) {
     inLanguage: post.language,
     author: {
       "@type": "Person",
+      "@id": personId,
       name: profile.name,
       url: profile.siteUrl + "/about/",
     },
@@ -62,12 +65,7 @@ export default async function BlogPage({ params }: Props) {
   const { html, ...summary } = post;
   return (
     <article className="blog-article" lang={post.language}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
-        }}
-      />
+      <StructuredData data={schema} />
       <ArticleHeader key={post.slug} post={summary} />
       <div
         className="article-body"

@@ -5,6 +5,7 @@ import { Text } from "@/components/language-provider";
 import { SocialLinks } from "@/components/social-links";
 import { EducationTimeline } from "@/components/resume-timeline";
 import { Icon } from "@/components/icons";
+import { StructuredData } from "@/components/structured-data";
 import {
   aboutSections,
   awards,
@@ -14,12 +15,14 @@ import {
   skills,
 } from "@/content/profile";
 import { pageMetadata } from "@/lib/metadata";
+import { profilePageSchema } from "@/lib/structured-data";
 
 export const metadata = pageMetadata("about");
 
 export default function About() {
   return (
     <>
+      <StructuredData data={profilePageSchema} />
       <PageIntro page="about" />
       <div className="about-layout">
         <div className="about-story">

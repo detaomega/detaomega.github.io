@@ -28,7 +28,7 @@
 - `src/components/language-provider.tsx`：React 語言狀態、文案元件、偏好記憶與跨頁語言保留。
 - `src/components/project-card.tsx`：共用專案項目。
 - `src/app/globals.css`：版面、字型、配色及手機版。
-- 字級使用 `rem`，目前內文基準為 17px，首頁介紹為 16px，並配合瀏覽器字體偏好調整。
+- 字級集中於 `globals.css` 的 `--text-body`、`--text-lead`、`--text-label`、`--text-small`。正文與學經歷為 18px，電腦版首頁介紹為 20px、手機版為 18px，導覽與按鈕為 16px；使用 `rem` 配合瀏覽器字體偏好調整。
 - `src/lib/metadata.ts`、`src/app/robots.ts`、`sitemap.ts`：SEO 與搜尋引擎設定。
 
 圖片與 CV 放在 `public/assets/`。替換 `profile.jpg` 或 `Ping-Yu-Yang-CV.pdf` 即可更新照片或履歷，也可在 `profile` 修改檔名。個人照片取自 <https://github.com/detaomega>。圖示與地圖來源見 [docs/design-assets.md](docs/design-assets.md)。
@@ -117,11 +117,13 @@ export const visitedCountries: VisitedCountry[] = [
 - `/social-preview.png`：1200 × 630 的大地色分享圖，在建置時產生。
 - `/sitemap.xml` 與 `/robots.txt`：包含全部六頁及已發布文章。文章修改日期來自實際內容日期。
 - `/feed.xml`：已發布文章的 RSS，頁首提供自動探索連結，Blog 和頁尾可訂閱。
-- `Person`、`WebSite` 與文章 `BlogPosting` 結構化資料。
-- 靜態 HTML：搜尋引擎不需執行 JavaScript 即可讀取文章與個人內容。
+- `Person`、`WebSite`、About 頁的 `ProfilePage` 與文章 `BlogPosting` 結構化資料；共用人物 ID 將 GitHub、LinkedIn、照片、學歷與文章作者連結到同一人。資料集中於 `src/lib/structured-data.ts`，不把即將到職的職缺標記為現任工作。
+- 靜態 HTML：姓名、學經歷、研究與文章內容在建置時就寫入 HTML，搜尋引擎不需執行 JavaScript 即可讀取。首頁標題為「Ping-Yu Yang | Software Engineering & Semantic Communication」。
+
+框架本身不保證搜尋排名。現有語言切換共用網址，預先產生的 HTML 為英文；繁體中文是訪客切換後的介面，並非獨立的中文索引頁。若之後希望中英文各有搜尋結果，可再增加獨立語言網址與相對應的 canonical / hreflang。
 
 部署完成後，請使用自己的 Google 帳號到 [Search Console](https://search.google.com/search-console/) 新增 **URL prefix** 資源 `https://detaomega.github.io/`，選擇 HTML tag 驗證。將驗證碼 `content="..."` 中的值填入 GitHub **Settings → Secrets and variables → Actions → Variables** 的 `GOOGLE_SITE_VERIFICATION`，重新執行部署後按驗證。開發時可複製 `.env.example` 為 `.env.local` 填入同一值。
 
-驗證後提交 `https://detaomega.github.io/sitemap.xml`，用 URL Inspection 檢查首頁與第一篇文章，追蹤點擊、曝光及索引狀態。網站需要先能公開開啟；Search Console 驗證必須由帳號擁有者操作。
+驗證後在 **Sitemaps** 提交 `https://detaomega.github.io/sitemap.xml`，在 **URL Inspection** 輸入首頁與 `/about/` 網址，確認可公開存取後按 **Request indexing**；之後發布第一篇文章也可用同樣方式提交，並追蹤點擊、曝光及索引狀態。網站需要先能公開開啟；Search Console 驗證必須由帳號擁有者操作。
 
-想持續增加曝光，可把網站放在 GitHub 個人檔案的 Website 欄位及履歷上，並持續發布具體的技術解題、研究整理或旅行心得，從相關社群分享文章連結。SEO 設定協助搜尋引擎理解內容，並不保證收錄、排名或流量。參考 [Google SEO 入門指南](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)、[sitemap 提交方式](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap) 與 [Article 結構化資料](https://developers.google.com/search/docs/appearance/structured-data/article)。
+想持續增加曝光，可把網站放在 GitHub 個人檔案的 Website 欄位、LinkedIn 個人檔案與履歷上，並持續發布具體的技術解題、研究整理或旅行心得，從相關社群分享文章連結。SEO 設定協助搜尋引擎理解內容，並不保證收錄、排名或流量。參考 [Google SEO 入門指南](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)、[sitemap 提交方式](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap) 、[ProfilePage 結構化資料](https://developers.google.com/search/docs/appearance/structured-data/profile-page)、[要求重新檢索](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl) 與 [Article 結構化資料](https://developers.google.com/search/docs/appearance/structured-data/article)。

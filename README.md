@@ -39,7 +39,7 @@ npm run dev
 
 ## 搜尋曝光
 
-各頁有獨立標題、描述、canonical、1200 × 630 社群分享圖；文章另有 `BlogPosting` 結構化資料、RSS 與 sitemap 更新。Google Search Console 的驗證與提交方式見 [WEBSITE.md](WEBSITE.md#搜尋與曝光)。
+各頁預先產生可直接讀取的 HTML，並有獨立標題、描述、canonical、1200 × 630 社群分享圖。`Person`、About 頁的 `ProfilePage` 與文章 `BlogPosting` 共用人物 ID，連結 GitHub 和 LinkedIn；已發布文章會加入 RSS 與 sitemap。Google Search Console 的驗證與提交方式見 [WEBSITE.md](WEBSITE.md#搜尋與曝光)。
 
 ## 驗證與正式版預覽
 

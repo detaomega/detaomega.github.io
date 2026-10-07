@@ -19,6 +19,7 @@ export function pageMetadata(name: PageName): Metadata {
       description: page.description.en,
       url: profile.siteUrl + page.href,
       type: "website",
+      locale: "en_US",
       siteName: profile.name,
       images: [socialImage],
     },
