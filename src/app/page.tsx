@@ -147,6 +147,38 @@ export default function Home() {
           </div>
         ))}
       </section>
+      <section
+        className="resume-section"
+        id="journal"
+        aria-labelledby="journal-title"
+      >
+        <Text
+          as="h2"
+          className="section-heading"
+          id="journal-title"
+          text={labels.journal}
+        />
+        <div className="journal-grid">
+          <Link className="journal-card" href="/blog/">
+            <Icon name="book" />
+            <Text as="h3" text={pages.blog.label} />
+            <Text as="p" text={pages.blog.intro} />
+            <span className="journal-card-link">
+              <Text text={labels.readBlog} />
+              <span aria-hidden="true">↗</span>
+            </span>
+          </Link>
+          <Link className="journal-card" href="/travel/">
+            <Icon name="globe" />
+            <Text as="h3" text={pages.travel.label} />
+            <Text as="p" text={pages.travel.intro} />
+            <span className="journal-card-link">
+              <Text text={labels.exploreTravel} />
+              <span aria-hidden="true">↗</span>
+            </span>
+          </Link>
+        </div>
+      </section>
     </>
   );
 }

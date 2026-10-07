@@ -17,17 +17,29 @@ npm run dev
 
 ## 專案結構
 
-| 位置                           | 用途                                              |
-| ------------------------------ | ------------------------------------------------- |
-| `src/content/profile.ts`       | 個人資料、中英文文案、學歷、經歷、專案與獎項      |
-| `src/app/`                     | Home、About、Projects、Experience 頁面與 metadata |
-| `src/components/`              | 共用導覽、語言切換、學歷／經歷時間軸、專案與圖示  |
-| `src/app/globals.css`          | 共用樣式與響應式版面                              |
-| `public/assets/`               | 照片、原始 CV 與 favicon                          |
-| `.github/workflows/deploy.yml` | 型別檢查、建置與 GitHub Pages 部署                |
+| 位置                           | 用途                                             |
+| ------------------------------ | ------------------------------------------------ |
+| `src/content/profile.ts`       | 個人資料、中英文文案、學歷、經歷、專案與獎項     |
+| `src/app/`                     | 六個頁面、文章頁、RSS 與搜尋 metadata            |
+| `content/posts/`               | Markdown 文章；`_template.md` 是不公開的範本     |
+| `src/content/travel.ts`        | 到訪國家、年份、城市與旅行心得                   |
+| `src/components/`              | 共用導覽、語言切換、學歷／經歷時間軸、專案與圖示 |
+| `src/app/globals.css`          | 共用樣式與響應式版面                             |
+| `public/assets/`               | 照片、原始 CV 與 favicon                         |
+| `.github/workflows/deploy.yml` | 型別檢查、建置與 GitHub Pages 部署               |
 
 內容集中於 `src/content/profile.ts`。例如更新實習經歷，只需修改 `experiences` 陣列，首頁經歷清單與 Experience 頁面便會同步更新。`organizations` 管理學校與公司的 logo 路徑。新增專案時可複製 `projects` 的既有項目；每段文案的 `en`、`zh` 分別是英文與繁體中文。
-公開設計參考連結由 `designReferences` 管理，顯示於所有頁面的頁尾；參考範圍記錄在 [docs/design-assets.md](docs/design-assets.md)。
+網站使用奶油白、砂岩米色、橄欖綠與少量陶土色。圖示與地圖素材來源記錄於 [docs/design-assets.md](docs/design-assets.md)。
+
+## Blog 與旅行紀錄
+
+複製 `content/posts/_template.md` 為英文小寫檔名（例如 `my-first-note.md`），編輯標題、摘要、日期、分類和 Markdown 內容，完成後設定 `draft: false`。每篇文章會自動取得獨立網址，並加入 sitemap 與 RSS。預設草稿及底線開頭的檔案不會發布。
+
+在 `src/content/travel.ts` 的 `visitedCountries` 填入實際去過的國家，旅行頁會同步更新地圖與紀錄卡片。小型國家會以地圖標記顯示。尚未提供國家或文章時，頁面顯示整理中的狀態。完整範例見 [WEBSITE.md](WEBSITE.md)。
+
+## 搜尋曝光
+
+各頁有獨立標題、描述、canonical、1200 × 630 社群分享圖；文章另有 `BlogPosting` 結構化資料、RSS 與 sitemap 更新。Google Search Console 的驗證與提交方式見 [WEBSITE.md](WEBSITE.md#搜尋與曝光)。
 
 ## 驗證與正式版預覽
 
@@ -48,7 +60,7 @@ npm run preview
 之後推送到 `main` 就會自動執行型別檢查、靜態匯出與部署：
 
 ```bash
-git add src public
+git add src public content/posts
 git commit -m "Update portfolio"
 git push origin main
 ```

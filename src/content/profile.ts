@@ -29,17 +29,6 @@ export const organizations = {
 };
 export type OrganizationId = keyof typeof organizations;
 
-export const designReferences = [
-  {
-    name: "En-Ming Huang",
-    url: "https://www.enmingw32.dev/",
-  },
-  {
-    name: "Stanley Shen",
-    url: "https://stanleyshen2003.github.io/me/",
-  },
-];
-
 export const pages = {
   home: {
     href: "/",
@@ -95,6 +84,34 @@ export const pages = {
     description: text(
       "Ping-Yu Yang's software engineering internships at TSMC, Microsoft, and Logitech, including performance optimization and workflow automation.",
       "Ping-Yu Yang 在 TSMC、Microsoft、Logitech 的實習經歷，包含 API 效能優化、全端開發與流程自動化。",
+    ),
+  },
+  blog: {
+    href: "/blog/",
+    label: text("Blog", "文章"),
+    title: text("Blog · Ping-Yu Yang", "文章 · Ping-Yu Yang"),
+    heading: text("Notes along the way.", "把沿途的想法，寫下來。"),
+    intro: text(
+      "A space for technical notes, research ideas, and stories from the road.",
+      "記下技術筆記、研究想法，也留一些篇幅給旅途中的故事。",
+    ),
+    description: text(
+      "Technical notes, research ideas, and travel writing by Ping-Yu Yang.",
+      "Ping-Yu Yang 的技術筆記、研究想法與旅行文章。",
+    ),
+  },
+  travel: {
+    href: "/travel/",
+    label: text("Travel", "旅行"),
+    title: text("Travel · Ping-Yu Yang", "旅行 · Ping-Yu Yang"),
+    heading: text("A little further from home.", "走遠一點，看看世界。"),
+    intro: text(
+      "Places I've visited, moments I remember, and stories to bring home.",
+      "記錄去過的國家、想留下的片刻，和帶回來的故事。",
+    ),
+    description: text(
+      "A map and journal of the countries visited by Ping-Yu Yang.",
+      "Ping-Yu Yang 的旅行地圖、到訪國家與旅途紀錄。",
     ),
   },
 };
@@ -350,7 +367,6 @@ export const skills = [
 ];
 
 export const labels = {
-  designReferences: text("Design references:", "設計參考："),
   introduction: text("Introduction", "自我介紹"),
   contents: text("On this page", "本頁內容"),
   biography: text("Bio", "關於我"),
@@ -368,6 +384,9 @@ export const labels = {
   downloadCV: text("Download my CV", "下載履歷"),
   education: text("Education", "學歷"),
   skills: text("Skills", "技術能力"),
+  journal: text("Beyond the résumé", "履歷之外"),
+  readBlog: text("Explore the blog", "閱讀文章"),
+  exploreTravel: text("Explore the map", "查看旅行地圖"),
   moreCode: text(
     "You can find more code and learning projects on my GitHub.",
     "更多程式碼與學習紀錄，可以在我的 GitHub 找到。",
@@ -386,4 +405,5 @@ export const homeSections = [
   { id: "projects", label: pages.projects.label },
   { id: "awards", label: labels.awards },
   { id: "skills", label: labels.skills },
+  { id: "journal", label: labels.journal },
 ];

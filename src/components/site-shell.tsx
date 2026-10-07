@@ -3,12 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
-import {
-  designReferences,
-  labels,
-  navigation,
-  profile,
-} from "@/content/profile";
+import { navigation, profile } from "@/content/profile";
 import { IconDefinitions } from "./icons";
 import { useLanguage } from "./language-provider";
 import { TableOfContents } from "./table-of-contents";
@@ -17,7 +12,10 @@ export function SiteShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const { language, toggleLanguage, translate } = useLanguage();
   const route = pathname === "/" ? "/" : pathname.replace(/\/$/, "") + "/";
-  const page = navigation.find((item) => item.href === route);
+  const page = navigation.find(
+    (item) =>
+      item.href === route || (item.href !== "/" && route.startsWith(item.href)),
+  );
   const [year, setYear] = useState(2026);
   useEffect(() => setYear(new Date().getFullYear()), []);
 
@@ -48,8 +46,14 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 <Link
                   key={item.id}
                   href={item.href}
-                  className={item.href === route ? "active" : undefined}
-                  aria-current={item.href === route ? "page" : undefined}
+                  className={item.id === page?.id ? "active" : undefined}
+                  aria-current={
+                    item.id === page?.id
+                      ? item.href === route
+                        ? "page"
+                        : "true"
+                      : undefined
+                  }
                 >
                   {translate(item.label)}
                 </Link>
@@ -92,21 +96,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
               <p>
                 © {year} {profile.name}
               </p>
-              <p className="design-credits">
-                {translate(labels.designReferences)}{" "}
-                {designReferences.map((reference, index) => (
-                  <span key={reference.url}>
-                    {index > 0 && " · "}
-                    <a
-                      href={reference.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {reference.name}
-                    </a>
-                  </span>
-                ))}
-              </p>
+              <a className="feed-link" href="/feed.xml">
+                RSS
+              </a>
             </div>
           </div>
         </footer>

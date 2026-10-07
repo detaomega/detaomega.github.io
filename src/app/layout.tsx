@@ -9,8 +9,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(profile.siteUrl),
   title: profile.name,
   icons: { icon: "/assets/favicon.svg" },
+  authors: [{ name: profile.name, url: profile.siteUrl + "/about/" }],
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+  },
 };
-export const viewport: Viewport = { themeColor: "#ffffff" };
+export const viewport: Viewport = { themeColor: "#faf7f1" };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const person = {
@@ -37,7 +41,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(person).replace(/</g, "\\u003c"),
+            __html: JSON.stringify([
+              person,
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                name: profile.name,
+                url: profile.siteUrl + "/",
+                inLanguage: ["en", "zh-Hant"],
+              },
+            ]).replace(/</g, "\\u003c"),
           }}
         />
         <LanguageProvider>

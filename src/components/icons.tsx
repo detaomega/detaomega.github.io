@@ -11,7 +11,9 @@ export type IconName =
   | "home"
   | "person"
   | "chevron"
-  | "skills";
+  | "skills"
+  | "book"
+  | "globe";
 
 export function Icon({ name }: { name: IconName }) {
   return (
@@ -29,6 +31,14 @@ export function IconDefinitions() {
       aria-hidden="true"
     >
       <defs>
+        <symbol id="icon-book" viewBox="0 0 24 24">
+          <path d="M12 5c-3-2-7-2-10-1v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1ZM12 5v15M5 8h4M5 11h4M15 8h4M15 11h4" />
+        </symbol>
+        <symbol id="icon-globe" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <ellipse cx="12" cy="12" rx="4" ry="9" />
+          <path d="M3 12h18M5 6.5h14M5 17.5h14" />
+        </symbol>
         <symbol id="icon-education" viewBox="0 0 24 24">
           <path d="m2 9 10-5 10 5-10 5-10-5ZM6 11v6c3 3 9 3 12 0v-6M22 9v7" />
         </symbol>
