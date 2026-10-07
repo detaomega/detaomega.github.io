@@ -6,11 +6,11 @@
 
 主要編輯 `src/content/profile.ts`：
 
-- `profile`：姓名、電子郵件、GitHub、照片與 CV 路徑。
+- `profile`：姓名、電子郵件、GitHub、LinkedIn、照片與 CV 路徑。
 - `pages`：六個頁面的標題、簡介、SEO 描述和導覽文字。
 - `research`、`aboutSections`：研究領域與自我介紹。
-- `education`：學歷、日期、GPA。臺大畢業日期目前依 CV 保留「預計 2026 年 6 月」。
-- `experiences`：工作經歷與成果，首頁摘要和完整經歷頁共用。
+- `education`：學歷、日期、GPA。臺大畢業日期依本人更新為「預計 2026 年 12 月底」。
+- `experiences`：工作經歷與成果，首頁摘要和完整經歷頁共用。NVIDIA 的 GPU System Engineer（RDSS Intern）目前標示為即將到職；開始工作後可更新 `dates`，並移除 `upcoming: true`。
 - `projects`：專案、技術列表與 GitHub 連結，首頁與專案頁共用。
 - `awards`、`skills`：獎項與技術能力。
 - `labels`：按鈕與其他共用介面文字。
@@ -28,6 +28,7 @@
 - `src/components/language-provider.tsx`：React 語言狀態、文案元件、偏好記憶與跨頁語言保留。
 - `src/components/project-card.tsx`：共用專案項目。
 - `src/app/globals.css`：版面、字型、配色及手機版。
+- 字級使用 `rem`，目前內文基準為 17px，首頁介紹為 16px，並配合瀏覽器字體偏好調整。
 - `src/lib/metadata.ts`、`src/app/robots.ts`、`sitemap.ts`：SEO 與搜尋引擎設定。
 
 圖片與 CV 放在 `public/assets/`。替換 `profile.jpg` 或 `Ping-Yu-Yang-CV.pdf` 即可更新照片或履歷，也可在 `profile` 修改檔名。個人照片取自 <https://github.com/detaomega>。圖示與地圖來源見 [docs/design-assets.md](docs/design-assets.md)。

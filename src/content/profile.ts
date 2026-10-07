@@ -9,6 +9,7 @@ export const profile = {
   siteUrl: "https://detaomega.github.io",
   email: "detaomega19@gmail.com",
   github: "https://github.com/detaomega",
+  linkedin: "https://www.linkedin.com/in/ping-yu-yang-38b34424a/",
   photo: "/assets/profile.jpg",
   cv: "/assets/Ping-Yu-Yang-CV.pdf",
   subtitle: text(
@@ -26,6 +27,7 @@ export const organizations = {
   tsmc: { name: "TSMC", logo: "/assets/logos/tsmc.svg" },
   microsoft: { name: "Microsoft", logo: "/assets/logos/microsoft.svg" },
   logitech: { name: "Logitech", logo: "/assets/logos/logitech.svg" },
+  nvidia: { name: "NVIDIA", logo: "/assets/logos/nvidia.svg" },
 };
 export type OrganizationId = keyof typeof organizations;
 
@@ -36,12 +38,12 @@ export const pages = {
     title: text("Ping-Yu Yang", "Ping-Yu Yang · 個人網站"),
     heading: text("Ping-Yu Yang", "Ping-Yu Yang"),
     intro: text(
-      "I'm Ping-Yu Yang, a computer science graduate from NYCU with research experience in semantic communication and deep learning at NTU. I've built software at TSMC, Microsoft, and Logitech, and enjoy turning complex problems into useful systems.",
-      "我是 Ping-Yu Yang，畢業於陽明交通大學資工系，在臺大資工研究語意通訊與深度學習。曾在 TSMC、Microsoft 與 Logitech 實習，喜歡從演算法出發，把複雜的問題做成實用的系統。",
+      "I'm Ping-Yu Yang, a computer science graduate from NYCU researching semantic communication and deep learning at NTU. I expect to graduate in late December 2026 and will be joining NVIDIA as a GPU System Engineer (RDSS Intern). Previously, I've built software at TSMC, Microsoft, and Logitech.",
+      "我是 Ping-Yu Yang，畢業於陽明交通大學資工系，目前在臺大資工研究語意通訊與深度學習，預計於 2026 年 12 月底畢業。接下來將加入 NVIDIA，擔任 GPU System Engineer（RDSS Intern）。先前曾在 TSMC、Microsoft 與 Logitech 實習。",
     ),
     description: text(
-      "Ping-Yu Yang — software engineering, semantic communication, and deep learning. Projects, education, and experience at TSMC, Microsoft, and Logitech.",
-      "Ping-Yu Yang 的個人網站：軟體工程、語意通訊與深度學習，精選專案、學歷與 TSMC、Microsoft、Logitech 工作經驗。",
+      "Ping-Yu Yang — NTU communication research and incoming NVIDIA GPU System Engineer (RDSS Intern). Projects and past internships at TSMC, Microsoft, and Logitech.",
+      "Ping-Yu Yang 的個人網站：臺大語意通訊研究、即將加入 NVIDIA 擔任 GPU System Engineer（RDSS Intern），以及專案、學歷與過往實習經歷。",
     ),
   },
   about: {
@@ -76,14 +78,14 @@ export const pages = {
     href: "/experience/",
     label: text("Experience", "經歷"),
     title: text("Experience · Ping-Yu Yang", "工作經歷 · Ping-Yu Yang"),
-    heading: text("Where I've worked.", "我的工作經歷。"),
+    heading: text("Where I've worked & what's next.", "我的工作經歷與下一站。"),
     intro: text(
-      "Three internships at TSMC, Microsoft, and Logitech, working on enterprise platforms, mapping tools, and engineering data workflows.",
-      "在 TSMC、Microsoft 與 Logitech 的三段實習，讓我參與企業平台、地圖工具與工程資料流程的開發。",
+      "Next, I'll be joining NVIDIA as a GPU System Engineer (RDSS Intern). My previous internships at TSMC, Microsoft, and Logitech involved enterprise platforms, mapping tools, and engineering data workflows.",
+      "接下來將加入 NVIDIA，擔任 GPU System Engineer（RDSS Intern）。過去在 TSMC、Microsoft 與 Logitech 的三段實習，讓我參與企業平台、地圖工具與工程資料流程的開發。",
     ),
     description: text(
-      "Ping-Yu Yang's software engineering internships at TSMC, Microsoft, and Logitech, including performance optimization and workflow automation.",
-      "Ping-Yu Yang 在 TSMC、Microsoft、Logitech 的實習經歷，包含 API 效能優化、全端開發與流程自動化。",
+      "Ping-Yu Yang's incoming GPU System Engineer (RDSS Intern) role at NVIDIA and previous engineering internships at TSMC, Microsoft, and Logitech.",
+      "Ping-Yu Yang 即將加入 NVIDIA 擔任 GPU System Engineer（RDSS Intern），以及在 TSMC、Microsoft、Logitech 的過往實習經歷。",
     ),
   },
   blog: {
@@ -170,7 +172,10 @@ export const education = [
       "National Taiwan University · Taipei, Taiwan",
       "國立臺灣大學 · 台灣臺北",
     ),
-    dates: text("Aug 2024 — Jun 2026 (expected)", "2024.08 — 2026.06（預計）"),
+    dates: text(
+      "Aug 2024 — late Dec 2026 (expected)",
+      "2024.08 — 2026.12 月底（預計）",
+    ),
     note: text(
       "Research: semantic communication, deep learning, wireless communication",
       "研究：語意通訊、深度學習、無線通訊",
@@ -192,7 +197,33 @@ export const education = [
   },
 ];
 
-export const experiences = [
+type Experience = {
+  id: OrganizationId;
+  organization: LocalizedString;
+  role: LocalizedString;
+  subtitle?: LocalizedString;
+  dates: LocalizedString;
+  upcoming?: boolean;
+  description: LocalizedString;
+  achievements: LocalizedString[];
+  technologies: string[];
+};
+
+export const experiences: Experience[] = [
+  {
+    id: "nvidia",
+    organization: text("NVIDIA", "NVIDIA"),
+    role: text("GPU System Engineer", "GPU System Engineer"),
+    subtitle: text("RDSS Intern", "RDSS 實習生"),
+    dates: text("Upcoming", "即將到職"),
+    upcoming: true,
+    description: text(
+      "Joining NVIDIA as a GPU System Engineer (RDSS Intern).",
+      "即將加入 NVIDIA，擔任 GPU System Engineer（RDSS Intern）。",
+    ),
+    achievements: [],
+    technologies: [],
+  },
   {
     id: "tsmc" as const,
     organization: text("TSMC · Hsinchu, Taiwan", "TSMC · 台灣新竹"),

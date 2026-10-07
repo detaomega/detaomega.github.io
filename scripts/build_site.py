@@ -5,10 +5,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = [
-    {"page": "home", "route": "/", "label": "Home", "zh": "首頁", "title": "Ping-Yu Yang", "title_zh": "Ping-Yu Yang · 個人網站", "description": "Ping-Yu Yang — software engineering, semantic communication, and deep learning. Projects, education, and experience at TSMC, Microsoft, and Logitech."},
+    {"page": "home", "route": "/", "label": "Home", "zh": "首頁", "title": "Ping-Yu Yang", "title_zh": "Ping-Yu Yang · 個人網站", "description": "Ping-Yu Yang — NTU communication research and incoming NVIDIA GPU System Engineer (RDSS Intern). Projects and past internships at TSMC, Microsoft, and Logitech."},
     {"page": "about", "route": "/about/", "label": "About", "zh": "關於", "title": "About · Ping-Yu Yang", "title_zh": "關於我 · Ping-Yu Yang", "description": "About Ping-Yu Yang: research interests, education at NTU and NYCU, competitive programming awards, and technical skills."},
     {"page": "projects", "route": "/projects/", "label": "Projects", "zh": "專案", "title": "Projects · Ping-Yu Yang", "title_zh": "專案 · Ping-Yu Yang", "description": "Selected projects by Ping-Yu Yang: AI-generated jazz drum comping and a full-stack meal ordering platform."},
-    {"page": "experience", "route": "/experience/", "label": "Experience", "zh": "經歷", "title": "Experience · Ping-Yu Yang", "title_zh": "工作經歷 · Ping-Yu Yang", "description": "Ping-Yu Yang's software engineering internships at TSMC, Microsoft, and Logitech, including performance optimization and workflow automation."},
+    {"page": "experience", "route": "/experience/", "label": "Experience", "zh": "經歷", "title": "Experience · Ping-Yu Yang", "title_zh": "工作經歷 · Ping-Yu Yang", "description": "Ping-Yu Yang's incoming GPU System Engineer (RDSS Intern) role at NVIDIA and previous engineering internships at TSMC, Microsoft, and Logitech."},
 ]
 
 def nav(current, active):

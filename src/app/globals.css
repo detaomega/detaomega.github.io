@@ -25,7 +25,7 @@ body {
   background: var(--background);
   color: var(--primary);
   font-family: var(--body-font);
-  font-size: 15px;
+  font-size: 1.0625rem;
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
 }
@@ -118,7 +118,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  font-size: 16px;
+  font-size: 1.125rem;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -130,7 +130,7 @@ img {
   border-radius: 8px;
   background: var(--accent);
   color: #fff;
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: -0.04em;
 }
@@ -145,7 +145,7 @@ img {
   align-items: center;
   min-height: 44px;
   color: var(--secondary);
-  font-size: 13px;
+  font-size: 0.9375rem;
   border-bottom: 2px solid transparent;
 }
 .navigation a:hover,
@@ -163,7 +163,7 @@ img {
   min-width: 44px;
   min-height: 38px;
   padding: 6px 9px;
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 .language-button:hover {
   color: var(--accent);
@@ -194,7 +194,7 @@ img {
   gap: 8px;
   min-height: 44px;
   padding: 8px 2px;
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--secondary);
   border-bottom: 2px solid transparent;
 }
@@ -206,7 +206,7 @@ img {
   border-bottom-color: var(--accent);
 }
 .section-index {
-  font-size: 10px;
+  font-size: 0.75rem;
   color: var(--subtle);
   font-variant-numeric: tabular-nums;
 }
@@ -236,7 +236,7 @@ img {
   min-width: 0;
 }
 .profile-focus {
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--accent);
   font-weight: 600;
   letter-spacing: 0.09em;
@@ -244,17 +244,17 @@ img {
   margin-bottom: 13px;
 }
 h1 {
-  font-size: 48px;
+  font-size: 3.125rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.045em;
 }
 .profile-identity h1 {
-  font-size: 54px;
+  font-size: 3.5rem;
 }
 .profile-subtitle {
   color: var(--secondary);
-  font-size: 15px;
+  font-size: 1.0625rem;
   line-height: 1.8;
   margin-top: 17px;
   max-width: 590px;
@@ -303,7 +303,7 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 8px 12px;
-  font-size: 12px;
+  font-size: 0.875rem;
   line-height: 1.5;
 }
 .contact-buttons .icon {
@@ -336,13 +336,13 @@ h1 {
 }
 .profile-biography p {
   color: var(--secondary);
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 1.85;
 }
 .profile-biography strong {
   display: block;
   color: var(--primary);
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 9px;
 }
@@ -355,7 +355,7 @@ h1 {
   align-items: center;
   gap: 11px;
   color: var(--primary);
-  font-size: 25px;
+  font-size: 1.6875rem;
   line-height: 1.4;
   font-weight: 600;
   margin-bottom: 22px;
@@ -377,7 +377,7 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
+  font-size: 0.875rem;
   flex-shrink: 0;
 }
 .section-link:hover {
@@ -408,6 +408,14 @@ h1 {
 }
 .experience-timeline .timeline-entry {
   border-bottom: 1px solid var(--border);
+}
+.timeline-upcoming .date {
+  width: fit-content;
+  color: var(--accent);
+  background: #eaecdf;
+  border-radius: 4px;
+  padding: 3px 9px;
+  font-weight: 600;
 }
 .timeline-summary {
   display: grid;
@@ -467,20 +475,26 @@ h1 {
 .organization-logo-logitech {
   padding: 5px;
 }
+.organization-logo-nvidia {
+  padding: 0;
+}
+.organization-logo-nvidia img {
+  transform: scale(1.5);
+}
 .timeline-copy {
   display: block;
   min-width: 0;
 }
 .timeline-title {
   display: block;
-  font-size: 17px;
+  font-size: 1.1875rem;
   font-weight: 600;
   line-height: 1.6;
 }
 .timeline-subtitle {
   display: block;
   color: var(--secondary);
-  font-size: 13px;
+  font-size: 0.9375rem;
   line-height: 1.8;
   margin-top: 3px;
 }
@@ -494,12 +508,12 @@ h1 {
 }
 .timeline-organization {
   color: var(--secondary);
-  font-size: 13px;
+  font-size: 0.9375rem;
   line-height: 1.8;
 }
 .date {
   color: var(--subtle);
-  font-size: 12px;
+  font-size: 0.875rem;
   line-height: 1.8;
   font-variant-numeric: tabular-nums;
 }
@@ -512,7 +526,7 @@ h1 {
 }
 .timeline-detail {
   padding: 0 52px 25px 100px;
-  font-size: 14px;
+  font-size: 1rem;
   color: var(--secondary);
   line-height: 1.85;
 }
@@ -529,7 +543,7 @@ h1 {
 }
 .technology-line {
   color: var(--subtle);
-  font-size: 12px;
+  font-size: 0.875rem;
   margin-top: 15px;
 }
 
@@ -566,14 +580,14 @@ h1 {
   height: 21px;
 }
 .project-preview h2 {
-  font-size: 18px;
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.6;
   margin-bottom: 10px;
   letter-spacing: -0.02em;
 }
 .project-preview p {
-  font-size: 14px;
+  font-size: 1rem;
   color: var(--secondary);
   line-height: 1.85;
 }
@@ -585,7 +599,7 @@ a.project-preview:hover h2 {
   align-items: center;
   gap: 7px;
   color: var(--accent);
-  font-size: 12px;
+  font-size: 0.875rem;
   margin-top: 21px;
 }
 .subtle-link .icon {
@@ -608,12 +622,12 @@ a.project-preview:hover h2 {
   color: var(--accent);
 }
 .award-row h3 {
-  font-size: 15px;
+  font-size: 1.0625rem;
   font-weight: 600;
   line-height: 1.7;
 }
 .award-row p {
-  font-size: 13px;
+  font-size: 0.9375rem;
   color: var(--secondary);
   margin-top: 4px;
 }
@@ -633,12 +647,12 @@ a.project-preview:hover h2 {
   min-width: 0;
 }
 .skill-row h3 {
-  font-size: 13px;
+  font-size: 0.9375rem;
   font-weight: 600;
   margin-bottom: 9px;
 }
 .skill-row p {
-  font-size: 13px;
+  font-size: 0.9375rem;
   color: var(--secondary);
   overflow-wrap: anywhere;
 }
@@ -649,11 +663,11 @@ a.project-preview:hover h2 {
   margin-top: 8px;
 }
 .page-intro h1 {
-  font-size: 40px;
+  font-size: 2.625rem;
 }
 .intro-text {
   color: var(--secondary);
-  font-size: 15px;
+  font-size: 1.0625rem;
   line-height: 1.9;
   margin-top: 20px;
 }
@@ -668,20 +682,20 @@ a.project-preview:hover h2 {
 }
 .text-section h2,
 .experience-contact h2 {
-  font-size: 21px;
+  font-size: 1.4375rem;
   margin-bottom: 13px;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
 .text-section p {
   color: var(--secondary);
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 1.9;
 }
 .teal-link {
   display: inline-block;
   color: var(--accent);
-  font-size: 13px;
+  font-size: 0.9375rem;
   margin-top: 16px;
 }
 .teal-link:hover {
@@ -699,7 +713,7 @@ a.project-preview:hover h2 {
   background: #eaecdf;
   padding: 3px 8px;
   border-radius: 4px;
-  font-size: 11px;
+  font-size: 0.8125rem;
 }
 .about-photo {
   width: 190px;
@@ -718,7 +732,7 @@ a.project-preview:hover h2 {
   gap: 10px;
   align-items: center;
   color: var(--secondary);
-  font-size: 12px;
+  font-size: 0.875rem;
   overflow-wrap: anywhere;
 }
 .sidebar-links .icon {
@@ -733,7 +747,7 @@ a.project-preview:hover h2 {
   margin-top: 34px;
 }
 .experience-list .timeline-title {
-  font-size: 20px;
+  font-size: 1.375rem;
 }
 .experience-contact {
   margin-top: 42px;
@@ -742,7 +756,7 @@ a.project-preview:hover h2 {
 }
 .experience-contact p {
   color: var(--secondary);
-  font-size: 14px;
+  font-size: 1rem;
 }
 .projects-list {
   margin-top: 32px;
@@ -750,12 +764,12 @@ a.project-preview:hover h2 {
 .project-points {
   padding-left: 18px;
   color: var(--secondary);
-  font-size: 13px;
+  font-size: 0.9375rem;
   line-height: 1.9;
   margin: 16px 0;
 }
 .page-closing {
-  font-size: 13px;
+  font-size: 0.9375rem;
   color: var(--secondary);
   margin-top: 35px;
 }
@@ -781,7 +795,7 @@ a.project-preview:hover h2 {
   gap: 25px;
 }
 .footer-navigation a {
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--secondary);
 }
 .footer-navigation a:hover {
@@ -789,7 +803,7 @@ a.project-preview:hover h2 {
 }
 .footer-details {
   text-align: right;
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--secondary);
 }
 .feed-link {
@@ -841,14 +855,14 @@ a.project-preview:hover h2 {
     gap: 24px;
   }
   .profile-identity h1 {
-    font-size: 42px;
+    font-size: 2.75rem;
   }
   .profile-portrait {
     width: 140px;
     height: 166px;
   }
   .profile-subtitle {
-    font-size: 14px;
+    font-size: 1rem;
   }
   .profile-biography {
     gap: 28px;
@@ -894,19 +908,19 @@ a.project-preview:hover h2 {
     row-gap: 0;
   }
   .site-brand {
-    font-size: 15px;
+    font-size: 1.0625rem;
     gap: 10px;
   }
   .brand-mark {
     width: 30px;
     height: 30px;
-    font-size: 11px;
+    font-size: 0.8125rem;
   }
   .language-button {
     grid-column: 2;
     grid-row: 1;
     min-height: 36px;
-    font-size: 11px;
+    font-size: 0.8125rem;
   }
   .navigation {
     grid-column: 1 / -1;
@@ -918,14 +932,14 @@ a.project-preview:hover h2 {
   }
   .navigation a {
     min-height: 43px;
-    font-size: 12px;
+    font-size: 0.875rem;
   }
   .contents-navigation {
     gap: 20px;
   }
   .contents-navigation a {
     min-height: 42px;
-    font-size: 11px;
+    font-size: 0.8125rem;
   }
   .section-index {
     display: none;
@@ -940,15 +954,15 @@ a.project-preview:hover h2 {
     align-items: start;
   }
   .profile-focus {
-    font-size: 10px;
+    font-size: 0.75rem;
     letter-spacing: 0.06em;
     margin-bottom: 9px;
   }
   .profile-identity h1 {
-    font-size: 32px;
+    font-size: 2.125rem;
   }
   .profile-subtitle {
-    font-size: 12px;
+    font-size: 0.875rem;
     margin-top: 12px;
   }
   .profile-portrait {
@@ -961,7 +975,7 @@ a.project-preview:hover h2 {
     margin-top: 18px;
   }
   .contact-buttons a {
-    font-size: 11px;
+    font-size: 0.8125rem;
     padding: 8px 10px;
   }
   .contact-buttons .icon {
@@ -975,14 +989,14 @@ a.project-preview:hover h2 {
     padding-top: 22px;
   }
   .profile-biography p {
-    font-size: 14px;
+    font-size: 1rem;
   }
   .resume-section,
   .detail-section {
     margin-top: 39px;
   }
   .section-heading {
-    font-size: 22px;
+    font-size: 1.5rem;
     gap: 9px;
     margin-bottom: 17px;
   }
@@ -990,7 +1004,7 @@ a.project-preview:hover h2 {
     gap: 10px;
   }
   .section-link {
-    font-size: 11px;
+    font-size: 0.8125rem;
     gap: 4px;
   }
   .timeline-summary,
@@ -1009,14 +1023,14 @@ a.project-preview:hover h2 {
     padding: 7px;
   }
   .timeline-title {
-    font-size: 15px;
+    font-size: 1.0625rem;
   }
   .timeline-subtitle,
   .timeline-organization {
-    font-size: 12px;
+    font-size: 0.875rem;
   }
   .timeline-meta > .date {
-    font-size: 11px;
+    font-size: 0.8125rem;
   }
   .timeline-summary > .icon {
     width: 14px;
@@ -1024,13 +1038,13 @@ a.project-preview:hover h2 {
   }
   .timeline-detail {
     padding: 0 20px 22px 70px;
-    font-size: 13px;
+    font-size: 0.9375rem;
   }
   .education-timeline .timeline-detail {
     padding: 0 19px 20px;
   }
   .experience-list .timeline-title {
-    font-size: 17px;
+    font-size: 1.1875rem;
   }
   .project-grid {
     grid-template-columns: 1fr;
@@ -1040,10 +1054,10 @@ a.project-preview:hover h2 {
     padding: 21px;
   }
   .project-preview h2 {
-    font-size: 17px;
+    font-size: 1.1875rem;
   }
   .project-preview p {
-    font-size: 13px;
+    font-size: 0.9375rem;
   }
   .award-row {
     grid-template-columns: 65px minmax(0, 1fr);
@@ -1051,10 +1065,10 @@ a.project-preview:hover h2 {
     padding: 16px 0;
   }
   .award-row h3 {
-    font-size: 14px;
+    font-size: 1rem;
   }
   .award-row p {
-    font-size: 12px;
+    font-size: 0.875rem;
   }
   .skill-row {
     padding: 19px;
@@ -1082,10 +1096,10 @@ a.project-preview:hover h2 {
     max-width: 100%;
   }
   .page-intro h1 {
-    font-size: 32px;
+    font-size: 2.125rem;
   }
   .intro-text {
-    font-size: 14px;
+    font-size: 1rem;
   }
   .footer-content {
     flex-direction: column;
@@ -1108,13 +1122,13 @@ a.project-preview:hover h2 {
     height: 96px;
   }
   .profile-identity h1 {
-    font-size: 28px;
+    font-size: 1.875rem;
   }
   .profile-subtitle {
-    font-size: 11px;
+    font-size: 0.8125rem;
   }
   .profile-focus {
-    font-size: 9px;
+    font-size: 0.6875rem;
     letter-spacing: 0.04em;
   }
 }
@@ -1154,13 +1168,13 @@ a.project-preview:hover h2 {
   color: var(--terracotta);
 }
 .journal-card h3 {
-  font-size: 21px;
+  font-size: 1.4375rem;
   letter-spacing: -0.025em;
   margin-bottom: 10px;
 }
 .journal-card p {
   color: var(--secondary);
-  font-size: 14px;
+  font-size: 1rem;
   max-width: 340px;
 }
 .journal-card-link {
@@ -1169,7 +1183,7 @@ a.project-preview:hover h2 {
   gap: 12px;
   margin-top: 28px;
   color: var(--accent);
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 .journal-card:hover {
@@ -1196,7 +1210,7 @@ a.project-preview:hover h2 {
   color: var(--secondary);
   padding: 8px 14px;
   min-height: 40px;
-  font-size: 12px;
+  font-size: 0.875rem;
   border: 1px solid transparent;
   border-radius: 6px;
   background: transparent;
@@ -1233,13 +1247,13 @@ a.project-preview:hover h2 {
   height: 28px;
 }
 .journal-empty h2 {
-  font-size: 24px;
+  font-size: 1.625rem;
   line-height: 1.5;
   letter-spacing: -0.03em;
 }
 .journal-empty p {
   color: var(--secondary);
-  font-size: 14px;
+  font-size: 1rem;
   max-width: 430px;
   margin-top: 12px;
 }
@@ -1263,14 +1277,14 @@ a.project-preview:hover h2 {
   flex-wrap: wrap;
   gap: 16px;
   color: var(--subtle);
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 .post-meta > span:first-child {
   color: var(--accent);
   font-weight: 600;
 }
 .post-card h2 {
-  font-size: 23px;
+  font-size: 1.5625rem;
   line-height: 1.5;
   margin-top: 12px;
   letter-spacing: -0.025em;
@@ -1278,14 +1292,14 @@ a.project-preview:hover h2 {
 .post-card p {
   margin-top: 10px;
   color: var(--secondary);
-  font-size: 14px;
+  font-size: 1rem;
 }
 .post-arrow {
   position: absolute;
   right: 28px;
   top: 48px;
   color: var(--accent);
-  font-size: 23px;
+  font-size: 1.5625rem;
 }
 .blog-article {
   max-width: 760px;
@@ -1296,21 +1310,21 @@ a.project-preview:hover h2 {
   margin-bottom: 38px;
 }
 .article-header h1 {
-  font-size: 40px;
+  font-size: 2.625rem;
   line-height: 1.35;
   margin-top: 18px;
   overflow-wrap: anywhere;
 }
 .article-description {
   color: var(--secondary);
-  font-size: 17px;
+  font-size: 1.1875rem;
   margin-top: 20px;
 }
 .article-byline {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--subtle);
   margin-top: 24px;
 }
@@ -1321,7 +1335,7 @@ a.project-preview:hover h2 {
   border-radius: 6px;
   padding: 8px 12px;
   min-height: 40px;
-  font-size: 12px;
+  font-size: 0.875rem;
   margin-top: 20px;
 }
 .copy-link:hover {
@@ -1329,7 +1343,7 @@ a.project-preview:hover h2 {
 }
 .copy-feedback {
   display: block;
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--secondary);
   overflow-wrap: anywhere;
 }
@@ -1349,12 +1363,12 @@ a.project-preview:hover h2 {
   margin-block: 0 24px;
 }
 .article-body h2 {
-  font-size: 26px;
+  font-size: 1.75rem;
   margin: 44px 0 18px;
   line-height: 1.5;
 }
 .article-body h3 {
-  font-size: 21px;
+  font-size: 1.4375rem;
   margin: 32px 0 14px;
   line-height: 1.5;
 }
@@ -1381,7 +1395,7 @@ a.project-preview:hover h2 {
   overflow-x: auto;
   white-space: pre;
   overflow-wrap: normal;
-  font-size: 13px;
+  font-size: 0.9375rem;
   line-height: 1.8;
 }
 .article-body code {
@@ -1402,7 +1416,7 @@ a.project-preview:hover h2 {
   width: 100%;
   overflow-x: auto;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 1rem;
 }
 .article-body td,
 .article-body th {
@@ -1432,15 +1446,15 @@ a.project-preview:hover h2 {
   gap: 12px;
 }
 .map-heading h2 {
-  font-size: 17px;
+  font-size: 1.1875rem;
   font-weight: 600;
 }
 .map-heading p {
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--secondary);
 }
 .map-heading strong {
-  font-size: 21px;
+  font-size: 1.4375rem;
   color: var(--accent);
   margin-right: 5px;
 }
@@ -1469,7 +1483,7 @@ a.project-preview:hover h2 {
   justify-content: flex-end;
   gap: 8px;
   color: var(--secondary);
-  font-size: 11px;
+  font-size: 0.8125rem;
 }
 .map-legend span {
   width: 9px;
@@ -1490,12 +1504,12 @@ a.project-preview:hover h2 {
   margin-top: 5px;
 }
 .travel-empty h2 {
-  font-size: 18px;
+  font-size: 1.25rem;
   font-weight: 600;
 }
 .travel-empty p {
   color: var(--secondary);
-  font-size: 14px;
+  font-size: 1rem;
   margin-top: 8px;
   max-width: 600px;
 }
@@ -1533,11 +1547,11 @@ a.project-preview:hover h2 {
   border-radius: 6px;
   color: var(--accent);
   background: #eaecdf;
-  font-size: 11px;
+  font-size: 0.8125rem;
   letter-spacing: 0.03em;
 }
 .country-heading h3 {
-  font-size: 20px;
+  font-size: 1.375rem;
 }
 .country-heading > .icon {
   margin-left: auto;
@@ -1550,11 +1564,11 @@ a.project-preview:hover h2 {
 }
 .country-visit time {
   color: var(--terracotta);
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 .country-visit p {
-  font-size: 14px;
+  font-size: 1rem;
   color: var(--secondary);
   margin-top: 5px;
 }
@@ -1589,7 +1603,7 @@ a.project-preview:hover h2 {
   }
   .navigation a {
     min-height: 42px;
-    font-size: 12px;
+    font-size: 0.875rem;
     justify-content: center;
   }
   .journal-toolbar {
@@ -1610,7 +1624,7 @@ a.project-preview:hover h2 {
   }
   .navigation a {
     min-height: 34px;
-    font-size: 11px;
+    font-size: 0.8125rem;
   }
   .footer-navigation {
     gap: 12px 24px;
@@ -1630,42 +1644,42 @@ a.project-preview:hover h2 {
   }
   .category-filters button {
     padding: 7px 10px;
-    font-size: 11px;
+    font-size: 0.8125rem;
   }
   .journal-empty {
     padding: 48px 10px 35px;
   }
   .journal-empty h2 {
-    font-size: 21px;
+    font-size: 1.4375rem;
   }
   .journal-empty p {
-    font-size: 13px;
+    font-size: 0.9375rem;
   }
   .post-card {
     padding: 23px 44px 23px 20px;
   }
   .post-card h2 {
-    font-size: 20px;
+    font-size: 1.375rem;
   }
   .post-arrow {
     right: 18px;
   }
   .post-meta {
-    font-size: 11px;
+    font-size: 0.8125rem;
     gap: 12px;
   }
   .article-header h1 {
-    font-size: 30px;
+    font-size: 2rem;
   }
   .article-description {
-    font-size: 15px;
+    font-size: 1.0625rem;
   }
   .article-body {
-    font-size: 14px;
+    font-size: 1rem;
   }
   .article-body pre {
     padding: 14px;
-    font-size: 12px;
+    font-size: 0.875rem;
   }
   .map-panel {
     padding: 20px 12px 16px;
@@ -1674,7 +1688,7 @@ a.project-preview:hover h2 {
     padding-inline: 5px;
   }
   .map-heading h2 {
-    font-size: 15px;
+    font-size: 1.0625rem;
   }
   .world-map {
     margin-block: 15px 5px;
@@ -1686,10 +1700,10 @@ a.project-preview:hover h2 {
     gap: 12px;
   }
   .travel-empty h2 {
-    font-size: 17px;
+    font-size: 1.1875rem;
   }
   .travel-empty p {
-    font-size: 13px;
+    font-size: 0.9375rem;
   }
   .country-card {
     padding: 20px;

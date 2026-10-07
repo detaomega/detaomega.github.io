@@ -15,6 +15,7 @@ type TimelineEntry = {
   subtitle?: LocalizedString;
   organization: LocalizedString;
   dates: LocalizedString;
+  upcoming?: boolean;
   detail: ReactNode;
 };
 
@@ -31,7 +32,7 @@ function ResumeTimeline({
     <div className={`resume-timeline ${kind}-timeline`}>
       {items.map((item) => (
         <details
-          className="timeline-entry"
+          className={`timeline-entry${item.upcoming ? " timeline-upcoming" : ""}`}
           key={item.id}
           id={item.id}
           open={expanded}
@@ -88,17 +89,23 @@ export function ExperienceTimeline({
       items={experiences.map((job) => ({
         id: job.id,
         title: job.role,
+        subtitle: job.subtitle,
         organization: job.organization,
         dates: job.dates,
+        upcoming: job.upcoming,
         detail: (
           <>
             <Text as="p" text={job.description} />
-            <ul>
-              {job.achievements.map((achievement) => (
-                <Text as="li" key={achievement.en} text={achievement} />
-              ))}
-            </ul>
-            <p className="technology-line">{job.technologies.join(" · ")}</p>
+            {job.achievements.length > 0 && (
+              <ul>
+                {job.achievements.map((achievement) => (
+                  <Text as="li" key={achievement.en} text={achievement} />
+                ))}
+              </ul>
+            )}
+            {job.technologies.length > 0 && (
+              <p className="technology-line">{job.technologies.join(" · ")}</p>
+            )}
           </>
         ),
       }))}

@@ -1,5 +1,6 @@
 export type IconName =
   | "github"
+  | "linkedin"
   | "mail"
   | "link"
   | "work"
@@ -31,6 +32,11 @@ export function IconDefinitions() {
       aria-hidden="true"
     >
       <defs>
+        <symbol id="icon-linkedin" viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <path d="M7 10v7M11 17v-7m0 3a3 3 0 0 1 6 0v4" />
+          <circle cx="7" cy="7" r=".75" fill="currentColor" stroke="none" />
+        </symbol>
         <symbol id="icon-book" viewBox="0 0 24 24">
           <path d="M12 5c-3-2-7-2-10-1v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1ZM12 5v15M5 8h4M5 11h4M15 8h4M15 11h4" />
         </symbol>

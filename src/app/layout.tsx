@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     name: profile.name,
     url: profile.siteUrl + "/",
     email: `mailto:${profile.email}`,
-    sameAs: [profile.github],
+    sameAs: [profile.github, profile.linkedin],
     knowsAbout: [
       "Software Engineering",
       "Semantic Communication",

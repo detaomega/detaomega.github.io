@@ -39,6 +39,19 @@ export function SocialLinks({
       {buttons && <span>{profile.email}</span>}
     </a>
   );
+  const linkedin = (
+    <a
+      href={profile.linkedin}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn: Ping-Yu Yang"
+      title="LinkedIn"
+    >
+      <Icon name="linkedin" />
+      {sidebar && <span>LinkedIn / Ping-Yu Yang</span>}
+      {buttons && <span>LinkedIn</span>}
+    </a>
+  );
   const cv = (
     <a
       href={profile.cv}
@@ -65,6 +78,7 @@ export function SocialLinks({
       {sidebar || buttons ? (
         <>
           {github}
+          {linkedin}
           {email}
           {cv}
         </>
@@ -72,6 +86,7 @@ export function SocialLinks({
         <>
           {cv}
           {github}
+          {linkedin}
           {email}
         </>
       )}

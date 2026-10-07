@@ -5,7 +5,7 @@
 - [En-Ming Huang](https://www.enmingw32.dev/)：參考學歷與經歷以真實校徽／公司 logo 識別機構，以及展開詳細內容的呈現方式。
 - [Stanley Shen](https://stanleyshen2003.github.io/me/)：早期版本的個人作品集資訊結構與多頁導覽參考。
 
-現版採大地色配色、無襯線字體、PY 個人識別、水平章節導覽與矩形照片。學歷使用並排卡片，工作經歷使用折疊清單，另有 Markdown Blog 與旅行地圖。個人履歷內容依 Ping-Yu Yang 的 CV 編寫。
+現版採大地色配色、無襯線字體、PY 個人識別、水平章節導覽與矩形照片。學歷使用並排卡片，工作經歷使用折疊清單，另有 Markdown Blog 與旅行地圖。個人履歷內容依 Ping-Yu Yang 的 CV 編寫，預計畢業日期與 NVIDIA 即將到職資訊依本人補充更新。
 
 | 圖示         | 本機檔案                            | 來源                                                                                                                                                                                                                             |
 | ------------ | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -14,6 +14,8 @@
 | TSMC         | `public/assets/logos/tsmc.svg`      | [Wikimedia — Tsmc.svg](https://en.wikipedia.org/wiki/File:Tsmc.svg)                                                                                                                                                              |
 | Microsoft    | `public/assets/logos/microsoft.svg` | Microsoft 四色方塊標誌，以 SVG 幾何圖形呈現                                                                                                                                                                                      |
 | Logitech     | `public/assets/logos/logitech.svg`  | [Wikimedia — Logitech logo.svg](https://commons.wikimedia.org/wiki/File:Logitech_logo.svg)                                                                                                                                       |
+
+NVIDIA 圖示存放於 `public/assets/logos/nvidia.svg`，取自 [NVIDIA 官方 Logo and Brand Guidelines](https://www.nvidia.com/en-us/about-nvidia/legal-info/logo-brand-usage/) 的垂直版 SVG。
 
 學校和公司圖示保持原始配色與比例，以 CSS `object-fit: contain` 顯示。一般導覽與章節圖示由 `src/components/icons.tsx` 的 SVG 線條圖形提供。
 
